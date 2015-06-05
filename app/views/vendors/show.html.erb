@@ -1,0 +1,64 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Vendor #<%= @vendor.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Contact name</dt>
+              <dd><%= @vendor.contact_name %></dd>
+
+              <dt>Contact number</dt>
+              <dd><%= @vendor.contact_number %></dd>
+
+              <dt>Rating</dt>
+              <dd><%= @vendor.rating %></dd>
+
+              <dt>Vendor size</dt>
+              <dd><%= @vendor.vendor_size_id %></dd>
+
+              <dt>Name</dt>
+              <dd><%= @vendor.name %></dd>
+
+              <dt>Location</dt>
+              <dd><%= @vendor.location_id %></dd>
+
+              <dt>Contact email</dt>
+              <dd><%= @vendor.contact_email %></dd>
+
+              <dt>Summary</dt>
+              <dd><%= @vendor.summary %></dd>
+
+              <dt>Website</dt>
+              <dd><%= @vendor.website %></dd>
+
+              <dt>User</dt>
+              <dd><%= @vendor.user_id %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/vendors" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/vendors/<%= @vendor.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_vendor/<%= @vendor.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
