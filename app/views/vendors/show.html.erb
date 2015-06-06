@@ -10,32 +10,33 @@
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
+
+              <dt>Name</dt>
+              <dd><%= @vendor.name %></dd>
+
+              <dt>Website</dt>
+              <dd><%= @vendor.website %></dd>
+
+              <dt>Location</dt>
+              <dd><%= @vendor.location.city %></dd>
+
+              <dt>Vendor size</dt>
+              <dd><%= @vendor.vendor_size.vendor_size %></dd>
+
+              <dt>Summary</dt>
+              <dd><%= @vendor.summary %></dd>
+
+              <dt>Rating</dt>
+              <dd><%= @vendor.rating %></dd>
+
               <dt>Contact name</dt>
               <dd><%= @vendor.contact_name %></dd>
 
               <dt>Contact number</dt>
               <dd><%= @vendor.contact_number %></dd>
 
-              <dt>Rating</dt>
-              <dd><%= @vendor.rating %></dd>
-
-              <dt>Vendor size</dt>
-              <dd><%= @vendor.vendor_size_id %></dd>
-
-              <dt>Name</dt>
-              <dd><%= @vendor.name %></dd>
-
-              <dt>Location</dt>
-              <dd><%= @vendor.location_id %></dd>
-
               <dt>Contact email</dt>
               <dd><%= @vendor.contact_email %></dd>
-
-              <dt>Summary</dt>
-              <dd><%= @vendor.summary %></dd>
-
-              <dt>Website</dt>
-              <dd><%= @vendor.website %></dd>
 
               <dt>User</dt>
               <dd><%= @vendor.user_id %></dd>

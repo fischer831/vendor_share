@@ -1,6 +1,7 @@
 class VendorsController < ApplicationController
   def index
-    @vendors = Vendor.all
+    @q = Vendor.ransack(params[:q])
+    @vendors = @q.result(:distinct => true).includes(:capabilities)
   end
 
   def show

@@ -7,6 +7,24 @@
 
 <!-- Responsive, Isotope-based layout example -->
 
+<%= search_form_for @q do |f| %>
+  <p class="lead">Search for Vendors:</p>
+
+  <div class="form-group">
+    <%= f.label :location_id_eq, "Location" %>
+    <%= f.select :location_id_eq, options_from_collection_for_select(Location.all, :id, :city, @q.location_id_eq), { :include_blank => true }, :class => "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :capabilities_service_id_eq, "Capability" %>
+    <%= f.select :capabilities_service_id_eq, options_from_collection_for_select(Service.all, :id, :name, @q.capabilities_service_id_eq), { :include_blank => true }, :class => "form-control" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/vendors" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
 <div class="row">
   <div class="col-xs-12">
     <input type="text" id="quicksearch" placeholder="Search Vendors (start typing)" class="form-control">
@@ -34,13 +52,13 @@
           <dd><%= vendor.rating %></dd>
 
           <dt>Vendor size</dt>
-          <dd><%= vendor.vendor_size_id %></dd>
+          <dd><%= vendor.vendor_size.vendor_size %></dd>
 
           <dt>Name</dt>
           <dd><%= vendor.name %></dd>
 
           <dt>Location</dt>
-          <dd><%= vendor.location_id %></dd>
+          <dd><%= vendor.location.city %></dd>
 
           <dt>Contact email</dt>
           <dd><%= vendor.contact_email %></dd>
