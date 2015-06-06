@@ -62,13 +62,13 @@
             </div>
           </div>
 
-           <!-- Label and input for vendor_size_id -->
+           <!-- Label and input for service -->
           <div class="form-group">
-            <label for="vendor_size_id" class="col-sm-2 control-label">
+            <label for="service" class="col-sm-2 control-label">
               Capabilities
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:service, options_from_collection_for_select(Service.all, :id, :name, nil,), :class => "form-control") %>
+              <%= select_tag(:service, options_from_collection_for_select(Service.all, :id, :name, nil,), :class => "form-control", :multiple => true) %>
             </div>
           </div>
 
