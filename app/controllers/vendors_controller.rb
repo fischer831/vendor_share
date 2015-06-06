@@ -25,11 +25,15 @@ class VendorsController < ApplicationController
     @vendor.website = params[:website]
     @vendor.user_id = current_user.id
 
-    #@capability = Capability.new
-    #@capability.vendor_id = @vendor.id
-    #@capability.service_id = params[:service]
-
     if @vendor.save
+
+      params[:service_ids].each do |service_id|
+        @capability = Capability.new
+        @capability.vendor_id = @vendor.id
+        @capability.service_id = service_id
+        @capability.save
+      end
+
       redirect_to "/vendors", :notice => "Vendor created successfully."
     else
       render 'new'
