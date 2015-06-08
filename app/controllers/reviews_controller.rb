@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
     @review.vendor_id = params[:vendor_id]
     @review.review = params[:review]
     @review.rating = params[:rating]
-    @review.user_id = params[:user_id]
+    @review.user_id = current_user.id
     @review.project_name = params[:project_name]
 
     if @review.save
-      redirect_to "/reviews", :notice => "Review created successfully."
+      redirect_to "/vendors/#{@review.vendor_id}", :notice => "Review created successfully."
     else
       render 'new'
     end
