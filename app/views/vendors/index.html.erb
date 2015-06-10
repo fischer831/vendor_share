@@ -43,7 +43,7 @@
       <div class="panel-body">
         <dl>
           <dt>Website</dt>
-          <dd><%= vendor.website %></dd>
+          <dd><a href="<%= vendor.website %>"><%= vendor.website %></a></dd>
 
           <dt>Location</dt>
           <dd><%= vendor.location.city %></dd>
@@ -55,7 +55,7 @@
           <dd><%= truncate(vendor.summary) %></dd>
 
           <dt>Rating</dt>
-          <dd><%= vendor.rating %></dd>
+          <dd><%= vendor.rating %> out of 5</dd>
 
           <dt>Contact name</dt>
           <dd><%= vendor.contact_name %></dd>
@@ -67,7 +67,7 @@
           <dd><%= vendor.contact_email %></dd>
 
           <dt>User</dt>
-          <dd><%= vendor.user.email %></dd>
+          <dd><%= vendor.user.username %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">

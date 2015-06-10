@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604004440) do
+ActiveRecord::Schema.define(version: 20150610020038) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 20150604004440) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "username"
-    t.string   "password"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
@@ -105,7 +104,6 @@ ActiveRecord::Schema.define(version: 20150604004440) do
   create_table "vendors", force: :cascade do |t|
     t.string   "contact_name"
     t.string   "contact_number"
-    t.float    "rating"
     t.integer  "vendor_size_id"
     t.string   "name"
     t.integer  "location_id"

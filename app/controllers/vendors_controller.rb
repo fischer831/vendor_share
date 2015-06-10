@@ -1,4 +1,14 @@
 class VendorsController < ApplicationController
+
+  before_action :ensure_current_user_is_owner, :only => [:destroy]
+
+  def ensure_current_user_is_owner
+    @vendor = Vendor.find(params[:id])
+    if @vendor.user_id != current_user.id
+     redirect_to root_url, :alert => "Only original user can delete entry"
+    end
+  end
+
   def index
     @q = Vendor.ransack(params[:q])
     @vendors = @q.result(:distinct => true).includes(:capabilities)

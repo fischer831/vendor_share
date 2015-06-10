@@ -6,7 +6,7 @@ class Vendor < ActiveRecord::Base
     if reviews.empty?
       "Not yet rated"
     else
-    reviews.average(:rating)
+    reviews.average(:rating).round(2)
   end
   end
 
@@ -14,4 +14,9 @@ class Vendor < ActiveRecord::Base
   belongs_to :vendor_size
   belongs_to :location
   belongs_to :user
+
+  validates :name, :presence => true
+  validates :location, :presence => true
+  validates :summary, :presence => true
+  validates :website, :presence => true
 end
