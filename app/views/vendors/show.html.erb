@@ -93,7 +93,21 @@
               Rating
             </label>
             <div class="col-sm-10">
-              <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @review.rating %>">
+              <label class="radio-inline">
+                <input type="radio" name="rating" id="inlineRadio1" value=1> 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="rating" id="inlineRadio2" value=2> 2
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="rating" id="inlineRadio3" value=3> 3
+              </label>
+               <label class="radio-inline">
+                <input type="radio" name="rating" id="inlineRadio4" value=4> 4
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="rating" id="inlineRadio5" value=5> 5 (Best)
+              </label>
             </div>
           </div>
 
@@ -124,3 +138,32 @@
 
 
 <!-- End responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Reviews</h3>
+      </div>
+      <div class="panel-body">
+<% @vendor.reviews.each do |review| %>
+        <div class="row row-striped">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+
+              <dt>Review</dt>
+              <dd><%= review.review %></dd>
+
+              <dt>Project</dt>
+              <dd><%= review.project_name %></dd>
+
+              <dt>User</dt>
+              <dd><%= review.user_id %></dd>
+</dl>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

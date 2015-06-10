@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
+
+before_action :ensure_current_user_is_owner, :only => [:update, :destroy, :edit]
+
   def index
-    @reviews = Review.all
+    @reviews = current_user.reviews
   end
 
   def show

@@ -52,7 +52,7 @@
           <dd><%= vendor.vendor_size.vendor_size %></dd>
 
           <dt>Summary</dt>
-          <dd><%= vendor.summary %></dd>
+          <dd><%= truncate(vendor.summary) %></dd>
 
           <dt>Rating</dt>
           <dd><%= vendor.rating %></dd>
@@ -67,7 +67,7 @@
           <dd><%= vendor.contact_email %></dd>
 
           <dt>User</dt>
-          <dd><%= vendor.user_id %></dd>
+          <dd><%= vendor.user.email %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
