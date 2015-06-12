@@ -59,7 +59,6 @@ class VendorsController < ApplicationController
 
     @vendor.contact_name = params[:contact_name]
     @vendor.contact_number = params[:contact_number]
-    @vendor.rating = params[:rating]
     @vendor.vendor_size_id = params[:vendor_size_id]
     @vendor.name = params[:name]
     @vendor.location_id = params[:location_id]
